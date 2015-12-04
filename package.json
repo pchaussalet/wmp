@@ -1,0 +1,15 @@
+{
+  "name": "web_multihead_presenter",
+  "version": "0.0.1",
+  "description": "Multihead HTML presentation server",
+  "main": "present.js",
+  "author": "Pierre Chaussalet <pchaussalet@gmail.com>",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "bluebird": "^3.0.2",
+    "hapi": "^11.0.3",
+    "inert": "^3.2.0",
+    "nconf": "^0.8.2",
+    "nes": "^1.1.2"
+  }
+}

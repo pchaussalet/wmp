@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#toolbar {
+    display: flex;
+    flex-direction: column;
+    min-width: 5em;
+    align-items: flex-start;
+}
+
+#toolbar a {
+    display: block;
+    background-color: dimgray;
+    width: 100%;
+    padding: 0.5em 0;
+    margin: 1px 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+#screens {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+iframe {
+    border: solid 1px silver;
+}
+
+#slides, #notes {
+    width: 99%;
+}
+
+#notes {
+    text-align: center;
+}
+
+#slides {
+    flex-grow: 2;
+    display: flex;
+    justify-content: space-around;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#current-column {
+    width: 75%;
+}
+
+#current {
+    border: solid 1px red;
+    flex-grow: 10;
+}
+
+#right {
+    border: solid 1px yellow;
+    align-self: center;
+}
+
+#bottom {
+    border: solid 1px green;
+    align-self: center;
+}
+
+#fragment {
+    border: solid 1px blue;
+    align-self: center;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Slides preview</title>
+    <link rel="stylesheet" href="css/preview.css"/>
+</head>
+<body>
+    <div id="root">
+        <div id="screens">
+            <div id="slides">
+                <div class="column" id="current-column">
+                    <iframe src="/" id="current"></iframe>
+                    <iframe src="/?offset=[0,1,0]" id="bottom"></iframe>
+                </div>
+                <div class="column">
+                    <iframe src="/?offset=[1,0,0]" id="right"></iframe>
+                    <iframe src="/?offset=[0,0,1]" id="fragment"></iframe>
+                </div>
+            </div>
+            <iframe src="/notes/" id="notes"></iframe>
+        </div>
+    </div>
+    <script src="/inject/modules/nes/lib/client.js"></script>
+    <script>
+        var client = new nes.Client('ws://' + location.host);
+        client.connect(function() {
+            window.addEventListener("keydown", function (event) {
+                switch (event.keyCode) {
+                    case 39:
+                    case 40:
+                        console.log('next');
+                        client.request('/next');
+                        break;
+                    case 37:
+                    case 38:
+                        console.log('previous');
+                        client.request('/previous');
+                        break;
+                    default:
+                        console.log(event);
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
